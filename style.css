@@ -187,4 +187,14 @@ nav .btn-group .btn {
     nav .btn-group .btn {
         margin: 0 3px !important;
     }
+
+    .container-fluid {
+        margin: 10px 0 0 0 !important;
+        padding: 0;
+    }
+
+    .container {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
 }
