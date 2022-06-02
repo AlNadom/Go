@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <title>الناظوم</title>
+    <meta name="description" content="تطبيق يساعد المبتدئين على بناء بيوت الشعر بسهولة حسب وزن البيت المرغوب." />
+    <meta name="keywords" content="شعر, بحور الشعر, بيت شعري, نَظم الشعر, أوزان الشعر, علم العروض" />
+    <meta name="author" content="أبو سامي المشرد" />
+    <meta name="copyright" content="GPL3" />
+
+    <meta charset="utf-8" />
+    <meta name="language" content="ar" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <meta name="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:locale" content="ar" />
+    <meta property="og:title" content="الناظوم" />
+    <meta property="og:description" content="تطبيق يساعد المبتدئين على بناء بيوت الشعر بسهولة حسب وزن البيت المرغوب" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://abousami.github.io/NDM/img/logo200.png" />
+    <meta property="og:image" content="https://abousami.github.io/NDM/img/logo400.png" />
+    <meta property="og:image" content="https://abousami.github.io/NDM/img/logo.png" />
+    <meta property="og:url" content="https://abousami.github.io/NDM" />
+    <meta name="og:site_name" content="الناظوم" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@" />
+    <meta name="twitter:title" content="الناظوم" />
+    <meta name="twitter:url" content="https://abousami.github.io/NDM" />
+    <meta name="twitter:image" content="https://abousami.github.io/NDM/img/logo500.png" />
+    <meta name="twitter:image:height" content="500" />
+    <meta name="twitter:image:width" content="500" />
+    <meta name="twitter:domain" content="abousami.github.io/NDM" />
+    <link rel="canonical" href="https://abousami.github.io/NDM" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500&family=Vazirmatn&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="./func.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./img/favicon/site.webmanifest">
+
+    <script src="./awzaan/waafer.js"></script>
+    <script src="./awzaan/hazaj.js"></script>
+    <script src="./awzaan/mota9aarab.js"></script>
+    <script src="./awzaan/motadaarak.js"></script>
+    <script src="./awzaan/ramal.js"></script>
+    <script src="./awzaan/kaamel.js"></script>
+    <script src="./awzaan/rajaz.js"></script>
+    <script src="./awzaan/taweel.js"></script>
+    <script src="./awzaan/baseet.js"></script>
+    <script src="./awzaan/khafeef.js"></script>
+    <script src="./awzaan/monsarih.js"></script>
+    <script src="./awzaan/saree3.js"></script>
+    <script src="./awzaan/madeed.js"></script>
+    <script src="./awzaan/mojtath.js"></script>
+    <script src="./awzaan/mo9tadhab.js"></script>
+    <script src="./awzaan/modhaare3.js"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="container-fluid">
+    <nav class="fixed-top">
+        <div class="row d-block d-md-none">
+            <div class="col-md-12 text-center">
+                <div class="btn-group btn-group-lg">
+                    <button onclick="Happend('ْ')" class="btn btn-primary">سكون</button>
+                    <button onclick="Happend('ّ')" class="btn btn-danger">شدة</button>
+                    <button onclick="Happend('ً')" class="btn btn-success">تنوين</button>
+                </div>
+            </div>
+        </div>
+        <input type="text" class="form-control form-control-lg is-invalid" id="chi3r"
+            placeholder="أكتب بيتك الشعري بالطريقة العروضية مع الشكل">
+        <div class="row d-none d-md-block">
+            <div class="col-md-12 text-center">
+                <div class="btn-group btn-group-lg">
+                    <button onclick="Happend('ْ')" class="btn btn-primary">سكون</button>
+                    <button onclick="Happend('ّ')" class="btn btn-danger">شدة</button>
+                    <button onclick="Happend('ً')" class="btn btn-success">تنوين</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <table class="table">
+            <tr>
+                <th id="ba7r" class="table-dark"></th>
+            </tr>
+            <tr>
+                <td id="ta9seem"></td>
+            </tr>
+        </table>
+        <div id="nobdhah">...</div>
+        <div class="card">
+            <div class="card-header text-white bg-secondary">بدَهِيات الكتابة العروضية في الحقل أعلى الصفحة</div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <tr class="table-primary">
+                        <th>الحركة والسكون</th>
+                    </tr>
+                    <tr class="table-warning">
+                        <td>إذا لم يتم ذلك تلقائيا، فيجب عليك تشكيل الحروف الساكنة يدويا، بدون تسكينها، لا يمكن للتطبيق
+                            تحديد الحركة من السكون، مثال:
+                            <br><em>لاْ تدعْ تشْكيْل حرْفنْ * ساْكننْ بدوْن ضبْطنْ.</em>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table table-striped">
+                    <tr class="table-primary">
+                        <th>الشدة والتنوين</th>
+                    </tr>
+                    <tr class="table-warning">
+                        <td>يقوم النظام بفك التنوين والإدِّغام، لكن أحيانا قد لا تكون النتيجة مرضية، ويبقى التدخل اليدوي
+                            أفضل طريقة لكتابة العَروض.</td>
+                    </tr>
+                </table>
+                <table class="table table-striped">
+                    <tr class="table-primary">
+                        <th>الرموز المسموحة</th>
+                    </tr>
+                    <tr class="table-warning">
+                        <td>بالإضافة إلى الحروف العربية والمسافة، يمكنك أيضا استخدام هذه الرموز
+                            ، . - : * / ? ! ؟
+                        </td>
+                    </tr>
+                </table>
+                <table class="table table-striped">
+                    <tr class="table-primary">
+                        <th>حروف زائدة</th>
+                    </tr>
+                    <tr class="table-warning">
+                        <td>أثناء الكتابة، أو بعد التغيير إلى بحر مختلف، تأكد من أن بيتك الشعري لا يحتوي على حروف
+                            زائدة أكبر من عدد حروف التفعيلة.</td>
+                    </tr>
+                </table>
+                <table class="table table-striped">
+                    <tr class="table-primary">
+                        <th>الزحافات والعلل</th>
+                    </tr>
+                    <tr class="table-warning">
+                        <td>التطبيق يتيح لك التفعيلات بتنوع أوزانها أثناء بناء البيت، لكنه لا يراقب ضوابط تراقب وتعاقب
+                            الزحافات والعلل، وهو شيء يجب عليك الإلمام به قبل بدء النظم، يمكنك البدء من هذه
+                            <a target="_blank" href="https://abuqudamah.com/talkheesat_shafeyah">
+                                المدونة
+                            </a>المباركة، لصاحبها، أبو قُدامَة المصري، والتي اعتمدت عليها لبناء هذا التطبيق، بالإضافة
+                            إلى كتاب
+                            <a target="_blank"
+                                href="https://www.noor-book.com/%D9%83%D8%AA%D8%A7%D8%A8-%D9%85%D9%88%D8%B3%D9%8A%D9%82%D9%8A-%D8%A7%D9%84%D8%B4%D8%B9%D8%B1-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%A5%D8%AA%D8%A8%D8%A7%D8%B9-%D9%88%D8%A7%D9%84%D8%A7%D8%A8%D8%AA%D8%AF%D8%A7%D8%B9-pdf">موسيقي
+                                الشعر بين الإتباع والابتداع</a> والذي أتاحه صاحبه، الدكتور شعبان صلاح، للتحميل على شكل
+                            ملف PDF، جزى الله خيرا كل من سعى للحفاظ على لغة القرآن.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p><img src="./img/logo.png" width="200" alt="شعار الناظوم"></p>
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                    <li class="nav-item">
+                        <figure>
+                            <blockquote class="blockquote">
+                                <p>إِذَا اخْتَلَّتْ أُوَازِنُهَا * أَنَا النَّاظُومُ أَنْظِمُهَا</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                                <cite title="Source Title">الناظوم 1.0</cite>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+                <div id="disqus_thread"></div>
+                <footer class="py-3 my-4">
+                    <small>أخوكم، أبو سامي المشرّد.</small>
+                    <div class="container p-4 pb-0">
+                        <section class="mb-4">
+                            <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;"
+                                href="https://www.youtube.com/channel/UChNxJKIMSXXJ0rG90vf4N6w" role="button"><i
+                                    class="fab fa-youtube"></i></a>
+                            <a class="btn btn-primary btn-floating m-1" style="background-color: rgb(59, 89, 152);"
+                                href="https://www.facebook.com/bosamxd/" role="button"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;"
+                                href="https://twitter.com/bosamxd" role="button"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;"
+                                href="https://instagram.com/bosamxd" role="button"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;"
+                                href="https://github.com/AbouSaMi/" role="button"><i class="fab fa-github"></i></a>
+                        </section>
+                    </div>
+                    <div class="col-12">
+                        <small>النسخة 1.0 متاحة
+                            <a href="https://github.com/AbouSaMi/NDM/releases/tag/v1.0" target="_blank">للتحميل</a>
+                            تحت رخصة جنو العمومية (GPL3).
+                        </small>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#chi3r").focus();
+            $('select').selectpicker({
+                noneSelectedText: 'لا توجد عناصر',
+                noneResultsText: 'لا نتائج تشبه {0}',
+                countSelectedText: function (numSelected, numTotal) {
+                    return (numSelected == 1) ? "{0} عنصر محدّد" : "{0} عنصر محدّد";
+                },
+                maxOptionsText: function (numAll, numGroup) {
+                    return [
+                        'عناصر كثيرة، يُسمح فقط ب ({n} عنصر/عناصر)',
+                        'عناصر كثيرة، يُسمح فقط ب ({n} عنصر/عناصر)'
+                    ];
+                },
+                selectAllText: 'تحديد الكلّ',
+                deselectAllText: 'إلغاء تحديد الكلّ',
+                multipleSeparator: ', '
+            });
+            $("#ba7r .selectpicker").change(function () {
+                $.cookie('Ba7r', $(this).val(), {
+                    expires: 30,
+                    path: '/'
+                });
+            });
+            $("#chi3r").arabicOnly();
+            $("#chi3r").bind('input propertychange', function (e) {
+                var input = $(e.target);
+                var beforeCh = input.val();
+
+                var allowed = Symbols;
+                allowed += 'ّلإلآألآضصثقفغعهخحجدذطكمنتالبيسشئءؤرلاىةوزظإآﻹﻷ،ًٌٌٌٍَُِْ';
+
+                var afterCh = '';
+                for (var i = 0; i < beforeCh.length; i++) {
+                    var tmpCh = beforeCh.charAt(i);
+                    if (allowed.indexOf(tmpCh) > -1) {
+                        afterCh = afterCh + tmpCh;
+                    }
+                }
+                if (afterCh) afterCh = Tansee9(tmpCh, afterCh.slice(0, -1));
+
+                $.cookie('Bayt', afterCh, {
+                    expires: 30,
+                    path: '/'
+                });
+
+                input.val(afterCh);
+                checkIt();
+            });
+        });
+        if ($.cookie('Bayt') != undefined) {
+            $("#chi3r").val($.cookie('Bayt'));
+        }
+        setSelect();
+        ta9seem();
+        Nobdhah();
+        checkIt();
+        var intervalId = window.setInterval(function () {
+            checkIt();
+        }, 5000);
+
+        var disqus_config = function () {
+            this.page.url = 'https://abousami.github.io/NDM';
+            this.page.identifier = 'abousami|NDM';
+        };
+        (function () {
+            var d = document,
+                s = d.createElement('script');
+            s.src = 'https://rwyt-bl-rby.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</body>
+
+</html>
