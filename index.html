@@ -126,7 +126,8 @@
                     <tr class="table-warning">
                         <td>إذا لم يتم ذلك تلقائيا، فيجب عليك تشكيل الحروف الساكنة يدويا، بدون تسكينها، لا يمكن للتطبيق
                             تحديد الحركة من السكون، مثال:
-                            <br><em>لاْ تدعْ تشْكيْل حرْفنْ * ساْكننْ أوْ حرْف مدْدنْ.</em>
+                            <br><em>لاْ تدعْ تشْكيْل حرْفنْ * ساْكننْ أوْ حرْف مدْدنْ.</em><br>
+                            <small class="text-danger">ملاحظة: يمكنك كتابة الرقم 0 (صفر) وسيتحول تلقائيا إلى سكون.</small>
                         </td>
                     </tr>
                 </table>
@@ -258,6 +259,7 @@
                 var afterCh = '';
                 for (var i = 0; i < beforeCh.length; i++) {
                     var tmpCh = beforeCh.charAt(i);
+                    tmpCh = tmpCh == '0' ? 'ْ' : tmpCh;
                     if (allowed.indexOf(tmpCh) > -1) {
                         afterCh = afterCh + tmpCh;
                     }

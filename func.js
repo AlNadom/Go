@@ -268,7 +268,7 @@ function setSelect() {
         return this.each(function () {
             $(this).keypress(function (e) {
                 var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
-                var Allowed = [32, 33, 42, 45, 46, 47, 58, 63, 1548, 1567];
+                var Allowed = [32, 33, 42, 45, 46, 47, 48, 58, 63, 1548, 1567];
                 if (key != 8) {
                     if (key < 0x0600 || key > 0x06FF) {
                         if ($.inArray(key, Allowed) === -1) return false;
