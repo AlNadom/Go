@@ -38,8 +38,18 @@ h5 {
 }
 
 .btn.dropdown-toggle.btn-light {
-    height: 60px;
+    height: 80px;
     font-size: 1.6em;
+}
+
+.btn.dropdown-toggle.btn-light small,
+.btn.dropdown-toggle.btn-light sub {
+    font-size: 14px;
+}
+
+.btn.dropdown-toggle.btn-light .bToggle {
+    font-size: 14px;
+    color: #6c757d;
 }
 
 td .btn.dropdown-toggle.btn-light {

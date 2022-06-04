@@ -127,7 +127,8 @@
                         <td>إذا لم يتم ذلك تلقائيا، فيجب عليك تشكيل الحروف الساكنة يدويا، بدون تسكينها، لا يمكن للتطبيق
                             تحديد الحركة من السكون، مثال:
                             <br><em>لاْ تدعْ تشْكيْل حرْفنْ * ساْكننْ أوْ حرْف مدْدنْ.</em><br>
-                            <small class="text-danger">ملاحظة: يمكنك كتابة الرقم 0 (صفر) وسيتحول تلقائيا إلى سكون.</small>
+                            <small class="text-danger">ملاحظة: يمكنك كتابة الرقم 0 (صفر) وسيتحول تلقائيا إلى
+                                سكون.</small>
                         </td>
                     </tr>
                 </table>
@@ -242,12 +243,6 @@
                 deselectAllText: 'إلغاء تحديد الكلّ',
                 multipleSeparator: ', '
             });
-            $("#ba7r .selectpicker").change(function () {
-                $.cookie('Ba7r', $(this).val(), {
-                    expires: 30,
-                    path: '/'
-                });
-            });
             $("#chi3r").arabicOnly();
             $("#chi3r").bind('input propertychange', function (e) {
                 var input = $(e.target);
@@ -274,6 +269,18 @@
                 input.val(afterCh);
                 checkIt();
             });
+
+            setInter();
+
+            $("#ba7r .selectpicker").change(function () {
+                $.cookie('Ba7r', $(this).val(), {
+                    expires: 30,
+                    path: '/'
+                });
+                setInter();
+            });
+
+
         });
         if ($.cookie('Bayt') != undefined) {
             $("#chi3r").val($.cookie('Bayt'));
@@ -282,9 +289,6 @@
         ta9seem();
         Nobdhah();
         checkIt();
-        var intervalId = window.setInterval(function () {
-            checkIt();
-        }, 5000);
 
         var disqus_config = function () {
             this.page.url = 'https://abousami.github.io/NDM';

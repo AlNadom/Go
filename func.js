@@ -252,7 +252,7 @@ function setSelect() {
         if (lastBa7r && Value['name'] != lastBa7r) select += '</optgroup>';
         if (Value['name'] != lastBa7r) select += '<optgroup label="' + Value['name'] + '">';
         var title = nums[Key.substr(Key.length - 1)] + ' ' + Value['name'] + ': ' + Value['type'];
-        var content = '<div class=\'text-black\'>' + title + '</div>';
+        var content = '<div class=\'text-black title\'>' + title + '</div>';
         content += '<small class=\'text-secondary\'>' + Value['desc'] + '</small><br>';
         content += '<sub class=\'text-secondary orig\'>' + Value['orig'] + '</sub>';
         select += '<option data-content="' + content + '" value="' + Key + '"' + (randomBa7r == Key ? ' selected' : '') + '>' + title + '</option>';
@@ -262,6 +262,22 @@ function setSelect() {
 
     $('#ba7r').html(select);
     $('select').selectpicker('refresh');
+}
+
+function setInter() {
+    var ba7rBtn = $('#ba7r .btn.dropdown-toggle.btn-light');
+    var bSmall = ba7rBtn.find('small').text();
+    var bSub = ba7rBtn.find('sub').text();
+    ba7rBtn.find('.title').after('<div class="bToggle">...</div>');
+    var bToggle = ba7rBtn.find('.bToggle');
+    bToggle.text(bSmall);
+
+    if (typeof setInter != 'undefined') clearInterval(setInter);
+
+    var setInter = window.setInterval(function () {
+        bToggle.text(bToggle.text() == bSmall ? bSub : bSmall);
+        checkIt();
+    }, 2000);
 }
 (function ($) {
     $.fn.arabicOnly = function () {
