@@ -74,7 +74,7 @@ function Harakaat(intArr) {
     var result = '<tr class="orig table-warning">';
     $.each(intArr, function (k, v) {
         result += '<td>';
-        result += v == 1 ? 'ح' : 'س';
+        result += v == 1 ? '<b>/</b>' : '0';
         result += '</td>';
     });
     result += '</tr>';
