@@ -279,7 +279,9 @@
                 });
                 setInter();
             });
-
+            $("#ba7r .dropdown").on("shown.bs.dropdown", function () {
+                $(this).find(".dropdown-menu li.active a").focus()
+            });
 
         });
         if ($.cookie('Bayt') != undefined) {
