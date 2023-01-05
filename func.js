@@ -251,7 +251,7 @@ function setSelect() {
     $.each(awzaan, function (Key, Value) {
         if (lastBa7r && Value['name'] != lastBa7r) select += '</optgroup>';
         if (Value['name'] != lastBa7r) select += '<optgroup label="' + Value['name'] + '">';
-        var title = '<img src=\'https://abousami.github.io/NDM/img/numbers/' + Key.substr(Key.length - 1) + '.png\' class=\'img-fluid\' width=\'30\' /> ' + Value['name'] + ': ' + Value['type'];
+        var title = '<img src=\'https://alnadom.github.io/Nadm/img/numbers/' + Key.substr(Key.length - 1) + '.png\' class=\'img-fluid\' width=\'30\' /> ' + Value['name'] + ': ' + Value['type'];
         var content = '<div class=\'text-black title\'>' + title + '</div>';
         content += '<small class=\'text-secondary\'>' + Value['desc'] + '</small><br>';
         content += '<sub class=\'text-secondary orig\'>' + Value['orig'] + '</sub>';
