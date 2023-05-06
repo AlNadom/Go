@@ -16,7 +16,9 @@ table td {
     text-align: center;
     color: red;
 }
-
+.pointer {
+    cursor: pointer;
+}
 * {
     text-align: center;
 }
