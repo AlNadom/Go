@@ -147,7 +147,7 @@ function checkIt(chi3r) {
         
         if (AllKeys.hasOwnProperty(wazn) && AllKeys[wazn] != $('.selectpicker').val()) {
             $("#detectBa7r").show();
-            $("#detectBa7r .alert").html('يبدو أنك نظمت بيتا شعريا على <b style="color: #dc3545">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + awzaan[AllKeys[wazn]]['name'] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> '+ awzaan[AllKeys[wazn]]['type'] + ': ' + awzaan[AllKeys[wazn]]['desc']+' <a onclick="ChangeBa7r(\'' + AllKeys[wazn] + '\', true)" class="pointer" style="color: #007bff; float: left;">هل تريد التغيير إليه؟</a>');
+            $("#detectBa7r .alert").html('هذا البيت الشعري ينتمي إلى <b style="color: #dc3545">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + awzaan[AllKeys[wazn]]['name'] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> '+ awzaan[AllKeys[wazn]]['type'] + ': ' + awzaan[AllKeys[wazn]]['desc']+' <a onclick="ChangeBa7r(\'' + AllKeys[wazn] + '\', true)" class="pointer" style="color: #007bff; float: left;">هل تريد التغيير إليه؟</a>');
             
         }else{
             $("#detectBa7r").hide();
