@@ -108,10 +108,18 @@ function Nobdhah(wazn) {
     $('#nobdhah').html(awzaan[wazn]['nobdhah'].replace('{ORIG}', orig));
 }
 
-function ChangeBa7r(wazn) {
+function ChangeBa7r(wazn, slc) {
     ta9seem(wazn);
     Nobdhah(wazn);
     checkIt();
+    if (slc == true) {
+        $('#ba7r .selectpicker').val(wazn);
+        $('#ba7r .selectpicker').selectpicker('refresh');
+        $.cookie('Ba7r', wazn, {
+            expires: 30,
+            path: '/'
+        });
+    }
 }
 
 function checkIt(chi3r) {
@@ -136,6 +144,14 @@ function checkIt(chi3r) {
             wazn += (v == 'ْ') ? "0" : "1";
         });
         if (wazn) {
+        
+        if (AllKeys.hasOwnProperty(wazn) && AllKeys[wazn] != $('.selectpicker').val()) {
+            $("#detectBa7r").show();
+            $("#detectBa7r .alert").html('يبدو أنك نظمت بيتا شعريا على <b style="color: #dc3545">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + awzaan[AllKeys[wazn]]['name'] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> '+ awzaan[AllKeys[wazn]]['type'] + ': ' + awzaan[AllKeys[wazn]]['desc']+' <a onclick="ChangeBa7r(\'' + AllKeys[wazn] + '\', true)" class="pointer" style="color: #007bff; float: left;">هل تريد التغيير إليه؟</a>');
+            
+        }else{
+            $("#detectBa7r").hide();
+        }
             wazn = wazn.split('');
             $.each(wazn, function (k, v) {
                 $('#td_' + k).attr('data-new', v);
