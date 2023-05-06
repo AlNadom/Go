@@ -114,7 +114,8 @@ nav .btn-group .btn {
 }
 
 #ta9seem {
-    border: 0 !important;
+	border: 0 !important;
+	background-color: #fff;
 }
 
 .bootstrap-select .dropdown-menu li small {
@@ -128,7 +129,8 @@ nav .btn-group .btn {
 
 #Poem {
 	position: relative;
-	height: 50px;
+	height: 56px;
+	border: none;
 }
 #Poem .list-group {
 	position: absolute;
@@ -140,7 +142,9 @@ nav .btn-group .btn {
 #Poem:hover .list-group {
     z-index: 10;
 }
-
+#Poem .list-group-item {
+	background-color: #e2e3e5;
+}
 
 .btn.btn-floating {
     border-radius: 20px;
