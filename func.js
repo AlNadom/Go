@@ -280,6 +280,63 @@ function setSelect() {
     $('select').selectpicker('refresh');
 }
 
+function saveIt() {
+    var Nm = $('#Poem .list-group li').length + 1;
+    var Bayt = $('#chi3r').val().normalize();
+    
+    if ($('#Poem .list-group li').filter(function() {
+      return $(this).data('bayt') === Bayt;
+    }).length === 0) {
+
+        var btns = '<span style="float: left;">' +
+                    '<button class="btn btn-sm" onclick="restoreIt($(this))">⬆</button>'+
+                    '<button class="btn btn-sm" onclick="delIt($(this))">❌</button>'+
+                    '</span>';
+
+        var li = $('<li>').addClass('list-group-item').attr('id', 'Bayt_'+Nm).attr('data-bayt', Bayt).html(Bayt+btns);
+        $('#Poem .list-group').append(li);
+
+        $.cookie('Bayt_'+Nm, Bayt, {
+            expires: 30,
+            path: '/'
+        });
+    } else {
+      console.log('Exists');
+    }
+}
+
+function delIt(that) {
+    var item = that.closest('li');
+    var iname = item.attr('id');
+    item.remove();
+    $.cookie(iname, null, {
+        expires: -1,
+        path: '/'
+    });
+}
+
+function restoreIt(that) {
+    var item = that.closest('li');
+    var value = item.attr('data-bayt');
+    $('#chi3r').val(value);
+}
+
+function resetIt() {
+    var cookies = document.cookie.split(';');
+    cookies.forEach(function(cookie) {
+    cookie = cookie.trim();
+        if (cookie.indexOf('Bayt_') === 0) {
+            $.cookie(cookie.split('=')[0], null, {
+                expires: -1,
+                path: '/'
+            });
+        }
+    });
+    $('#Poem .list-group').empty();
+}
+
+
+
 function setInter() {
     var ba7rBtn = $('#ba7r .btn.dropdown-toggle.btn-light');
     var bSmall = ba7rBtn.find('small').text();

@@ -82,7 +82,6 @@
     <script src="./awzaan/modhaare3.js"></script>
     <script src="./awzaan/all.js"></script>
 
-
     <link rel="stylesheet" href="./style.css" />
 </head>
 
@@ -94,6 +93,8 @@
                     <button onclick="Happend('ْ')" class="btn btn-primary">سكون</button>
                     <button onclick="Happend('ّ')" class="btn btn-danger">شدة</button>
                     <button onclick="Happend('ً')" class="btn btn-success">تنوين</button>
+                    <button onclick="saveIt()" class="btn btn-warning">⬇</button>
+                    <button onclick="resetIt()" class="btn btn-light">❌</button>
                 </div>
             </div>
         </div>
@@ -105,6 +106,8 @@
                     <button onclick="Happend('ْ')" class="btn btn-primary">سكون</button>
                     <button onclick="Happend('ّ')" class="btn btn-danger">شدة</button>
                     <button onclick="Happend('ً')" class="btn btn-success">تنوين</button>
+                    <button onclick="saveIt()" class="btn btn-warning">⬇</button>
+                    <button onclick="resetIt()" class="btn btn-light">❌</button>
                 </div>
             </div>
         </div>
@@ -112,12 +115,18 @@
     <div class="container">
         <table class="table">
             <tr>
-                <th id="ba7r" class="table-dark"></th>
-            </tr>
-            <tr>
                 <td id="detectBa7r">
                 <div class="alert alert-success text-right" role="alert"></div>
                 </td>
+            </tr>
+            <tr>
+                <td id="Poem">
+                        <ul class="list-group list-group-flush">
+                        </ul>
+                </td>
+            </tr>
+            <tr>
+                <th id="ba7r" class="table-dark"></th>
             </tr>
             <tr>
                 <td id="ta9seem"></td>
@@ -234,6 +243,53 @@
     </div>
     <script>
         $(document).ready(function () {
+            $("#detectBa7r").hide();
+
+
+
+
+
+
+// Get all cookies
+var cookies = document.cookie.split(';');
+  
+// Loop through cookies
+cookies.forEach(function(cookie) {
+  // Trim leading and trailing spaces
+  cookie = cookie.trim();
+    
+  // Check if cookie name starts with Bayt_
+  if (cookie.indexOf('Bayt_') === 0) {
+    // Get cookie value
+    var value = decodeURIComponent(cookie.split('=')[1]);
+      
+    // Check if value does not already exist in list
+    if ($('#Poem .list-group li[data-bayt="' + value + '"]').length === 0) {
+      // Get the index number from the cookie name
+      var index = parseInt(cookie.split('_')[1], 10);
+
+
+      var btns = '<span style="float: left;">' +
+                    '<button class="btn btn-sm" onclick="restoreIt($(this))">⬆</button>'+
+                    '<button class="btn btn-sm" onclick="delIt($(this))">❌</button>'+
+                    '</span>';
+
+
+      var li = $('<li>').addClass('list-group-item').attr('data-bayt', value).attr('id', 'Bayt_' + index).html(value+btns);
+      $('#Poem .list-group').append(li);
+    }
+  }
+});
+
+
+
+
+
+
+
+
+
+
             $("#chi3r").focus();
             $('select').selectpicker({
                 noneSelectedText: 'لا توجد عناصر',
