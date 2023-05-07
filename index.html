@@ -291,12 +291,16 @@
                 multipleSeparator: ', '
             });
             $("#chi3r").arabicOnly();
+            
             $("#chi3r").bind('input propertychange', function (e) {
                 var input = $(e.target);
                 var beforeCh = input.val();
 
                 var allowed = Symbols;
                 allowed += 'ّلإلآألآضصثقفغعهخحجدذطكمنتالبيسشئءؤرلاىةوزظإآﻹﻷ،ًٌٌٌٍَُِْ';
+
+                // Save current cursor position
+                var cursorPosition = input.prop('selectionStart');
 
                 var afterCh = '';
                 for (var i = 0; i < beforeCh.length; i++) {
@@ -313,10 +317,15 @@
                     path: '/'
                 });
 
+                // Set the modified value
                 input.val(afterCh);
+
+                // Return cursor to its original position
+                input.prop('selectionStart', cursorPosition);
+                input.prop('selectionEnd', cursorPosition);
+
                 checkIt();
             });
-
             setInter();
 
             $("#ba7r .selectpicker").change(function () {
