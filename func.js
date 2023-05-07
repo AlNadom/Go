@@ -343,7 +343,14 @@ function resetIt() {
     $('#Poem').css('height', '0');
 }
 
-
+function copyPoem() {
+  let poem = $("#Poem");
+  let poemText = "";
+  poem.children("ul").children("li").each(function() {
+    poemText += $(this).attr("data-bayt") + "\n";
+  });
+  navigator.clipboard.writeText(poemText);
+}
 
 function setInter() {
     var ba7rBtn = $('#ba7r .btn.dropdown-toggle.btn-light');
