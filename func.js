@@ -252,7 +252,7 @@ function Tansee9(text, front) {
                 break;
             default:
                 var lastCh = front.substr(front.length - 1);
-                if ($.inArray(lastCh, ['ا', 'ي', 'و', 'ى']) !== -1 && text == ' ') front += 'ْ';
+                // if ($.inArray(lastCh, ['ا', 'ي', 'و', 'ى']) !== -1 && text == ' ') front += 'ْ';
         }
 
         front = front + text;
