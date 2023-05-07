@@ -129,11 +129,13 @@ nav .btn-group .btn {
 #detectBa7r {
 	border: none;
 }
+
 #Poem {
 	position: relative;
 	height: 56px;
 	border: none;
 }
+
 #Poem .list-group {
 	position: absolute;
 	z-index: -1;
@@ -141,9 +143,11 @@ nav .btn-group .btn {
 	left: 15px;
 	top: 0;
 }
+
 #Poem:hover .list-group {
     z-index: 10;
 }
+
 #Poem .list-group-item {
 	background-color: #e2e3e5;
 }
