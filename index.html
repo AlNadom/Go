@@ -253,19 +253,24 @@
             
             var cookies = document.cookie.split(';');
             cookies.forEach(function(cookie) {
-            cookie = cookie.trim();
-            if (cookie.indexOf('Bayt_') === 0) {
-                var value = decodeURIComponent(cookie.split('=')[1]);
-                if ($('#Poem .list-group li[data-bayt="' + value + '"]').length === 0) {
-                var index = parseInt(cookie.split('_')[1], 10);
-                var btns = '<span style="float: left;">' +
-                                '<button class="btn btn-sm" onclick="restoreIt($(this))">⬆</button>'+
-                                '<button class="btn btn-sm" onclick="delIt($(this))">❌</button>'+
-                                '</span>';
-                var li = $('<li>').addClass('list-group-item').attr('data-bayt', value).attr('id', 'Bayt_' + index).html(value+btns);
-                $('#Poem .list-group').append(li);
+                cookie = cookie.trim();
+                if (cookie.indexOf('Bayt_') === 0) {
+                    var value = decodeURIComponent(cookie.split('=')[1]);
+                    if ($('#Poem .list-group li[data-bayt="' + value + '"]').length === 0) {
+                        var index = parseInt(cookie.split('_')[1], 10);
+                        var btns = '<span style="float: left;">' +
+                                        '<button class="btn btn-sm" onclick="restoreIt($(this))">⬆</button>'+
+                                        '<button class="btn btn-sm" onclick="delIt($(this))">❌</button>'+
+                                        '</span>';
+                        var li = $('<li>').addClass('list-group-item').attr('data-bayt', value).attr('id', 'Bayt_' + index).html(value+btns);
+                        $('#Poem .list-group').append(li);
+                    }
                 }
-            }
+                if ($('#Poem .list-group').find('li').length === 0) {
+                    $('#Poem').css('height', '0');
+                }else{
+                    $('#Poem').css('height', '56px');
+                }
             });
 
             $("#chi3r").focus();
