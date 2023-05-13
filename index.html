@@ -245,12 +245,6 @@
     </div>
     <script>
         $(document).ready(function () {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                $('html').css({
-                    '-webkit-filter': 'invert(100%)',
-                    'filter': 'invert(100%)'
-                });
-            }
             $("#detectBa7r").hide();
             
             var cookies = document.cookie.split(';');
